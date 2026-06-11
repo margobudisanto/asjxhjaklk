@@ -14,24 +14,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://femoire-novia.vercel.app"),
+  title: "Femoire Novia - Suplemen Kesehatan Wanita Premium",
+  description: "Femoire Novia adalah suplemen kesehatan wanita premium dengan bahan alami untuk membantu menjaga kesegaran, kenyamanan, dan kepercayaan diri.",
+  keywords: ["Femoire Novia", "suplemen wanita", "kesehatan wanita", "produk herbal wanita", "Novia"],
+  authors: [{ name: "Femoire Novia" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo.svg",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Femoire Novia",
+    description: "Suplemen kesehatan wanita premium dengan bahan alami berkualitas.",
+    url: "/",
+    siteName: "Femoire Novia",
+    images: ["/novia-display.png"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Femoire Novia",
+    description: "Suplemen kesehatan wanita premium dengan bahan alami berkualitas.",
+    images: ["/novia-display.png"],
   },
 };
 
@@ -41,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="id" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
