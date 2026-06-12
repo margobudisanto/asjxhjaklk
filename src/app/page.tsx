@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -10,18 +9,6 @@ import { CheckCircle2, Star, Heart, Flower2, Sparkles, Shield, Zap, ShoppingCart
 const ADCUAN_TRACKING_URL = 'https://plus.adcuan.com/ctwa/704-6'
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    address: '',
-    quantity: '1'
-  })
-
-  const handleOrder = (e: React.FormEvent) => {
-    e.preventDefault()
-    window.location.href = ADCUAN_TRACKING_URL
-  }
-
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-rose-50 via-pink-50 to-white">
       {/* Hero Section with New Aesthetic Design */}
@@ -392,218 +379,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing & Order Section */}
+      {/* Product Variant Section */}
       <section id="order-section" className="bg-gradient-to-b from-white via-rose-50 to-pink-50 px-4 py-12 sm:px-6 sm:py-16 md:py-28">
         <div className="max-w-5xl mx-auto">
           <div className="mb-10 text-center sm:mb-16">
             <Badge className="mb-4 bg-gradient-to-r from-rose-600 to-pink-600 px-5 py-2 font-bold text-white sm:px-6">Promo Terbatas</Badge>
             <h2 className="mb-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:mb-6 md:text-5xl">
-              Pesan Sekarang, Dapatkan Harga Spesial! 🎉
+              Pilih Varian Femoire Novia
             </h2>
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl">
-              Stok terbatas, jangan sampai kehabisan! Pesan sekarang untuk mendapatkan harga promo
+              Pilih paket sesuai kebutuhan Anda, lalu lanjutkan pemesanan melalui WhatsApp
             </p>
           </div>
 
-          <div className="mb-12 grid gap-5 sm:gap-6 md:mb-16 md:grid-cols-3 lg:gap-8">
-            <Card className="border-2 border-gray-200 hover:border-rose-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-xl font-bold text-gray-900 sm:text-2xl">Paket Hemat</CardTitle>
-                <CardDescription className="text-base">1 Botol</CardDescription>
-                <div className="mt-6">
-                  <span className="block text-3xl font-bold leading-tight text-rose-600 sm:text-4xl">Rp 349.000</span>
-                </div>
-              </CardHeader>
-              <CardContent className="text-center">
-                <ul className="text-sm text-gray-600 space-y-3 mb-6">
-                  <li className="flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    <span className="font-medium">60 Kapsul</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    <span className="font-medium">Untuk 30 Hari</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <Truck className="w-5 h-5 text-rose-600" />
-                    <span className="font-medium">Gratis Ongkir</span>
-                  </li>
-                </ul>
-                <Button
-                  className="h-12 w-full rounded-full bg-gray-200 font-bold text-gray-900 shadow-md hover:bg-gray-300 sm:h-14"
-                  onClick={() => {
-                    setFormData({ ...formData, quantity: '1' })
-                    document.getElementById('order-form')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Pilih Paket
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="relative border-4 border-rose-500 shadow-2xl transition-all duration-300 md:hover:scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                <Badge className="bg-gradient-to-r from-rose-600 to-pink-600 px-5 py-2 text-sm font-bold text-white shadow-lg sm:px-6 sm:text-base">
-                  POPULER ✨
-                </Badge>
-              </div>
-              <CardHeader className="text-center pb-6 bg-gradient-to-b from-rose-50 to-white rounded-t-lg">
-                <CardTitle className="text-xl font-bold text-gray-900 sm:text-2xl">Paket Super</CardTitle>
-                <CardDescription className="text-base">2 Botol</CardDescription>
-                <div className="mt-6">
-                  <span className="block text-base text-gray-400 line-through sm:text-xl">Rp 698.000</span>
-                  <span className="block text-3xl font-bold leading-tight text-rose-600 sm:text-4xl">Rp 599.000</span>
-                </div>
-                <p className="text-base text-green-600 font-bold mt-2">Hemat Rp 99.000! 💰</p>
-              </CardHeader>
-              <CardContent className="text-center">
-                <ul className="text-sm text-gray-600 space-y-3 mb-6">
-                  <li className="flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    <span className="font-medium">120 Kapsul</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    <span className="font-medium">Untuk 60 Hari</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <Truck className="w-5 h-5 text-rose-600" />
-                    <span className="font-medium">Gratis Ongkir</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <Gift className="w-5 h-5 text-rose-600" />
-                    <span className="font-medium text-rose-600">Bonus E-Book Kesehatan!</span>
-                  </li>
-                </ul>
-                <Button
-                  className="h-12 w-full rounded-full bg-gradient-to-r from-rose-600 to-pink-600 font-bold text-white shadow-lg shadow-rose-300/50 hover:from-rose-700 hover:to-pink-700 sm:h-14"
-                  onClick={() => {
-                    setFormData({ ...formData, quantity: '2' })
-                    document.getElementById('order-form')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Pilih Paket
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-200 hover:border-rose-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-xl font-bold text-gray-900 sm:text-2xl">Paket Sultan</CardTitle>
-                <CardDescription className="text-base">3 Botol</CardDescription>
-                <div className="mt-6">
-                  <span className="block text-base text-gray-400 line-through sm:text-xl">Rp 1.047.000</span>
-                  <span className="block text-3xl font-bold leading-tight text-rose-600 sm:text-4xl">Rp 849.000</span>
-                </div>
-                <p className="text-base text-green-600 font-bold mt-2">Hemat Rp 198.000! 💰</p>
-              </CardHeader>
-              <CardContent className="text-center">
-                <ul className="text-sm text-gray-600 space-y-3 mb-6">
-                  <li className="flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    <span className="font-medium">180 Kapsul</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
-                    <span className="font-medium">Untuk 90 Hari</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <Truck className="w-5 h-5 text-rose-600" />
-                    <span className="font-medium">Gratis Ongkir Prioritas</span>
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <Gift className="w-5 h-5 text-rose-600" />
-                    <span className="font-medium text-rose-600">Bonus E-Book + Konsultasi!</span>
-                  </li>
-                </ul>
-                <Button
-                  className="h-12 w-full rounded-full bg-gray-200 font-bold text-gray-900 shadow-md hover:bg-gray-300 sm:h-14"
-                  onClick={() => {
-                    setFormData({ ...formData, quantity: '3' })
-                    document.getElementById('order-form')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Pilih Paket
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Order Form */}
-          <Card id="order-form" className="border-2 border-rose-200 shadow-2xl sm:border-[3px]">
-            <CardHeader className="bg-gradient-to-r from-rose-50 to-pink-50 pb-6 sm:pb-8">
-              <CardTitle className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">Formulir Pemesanan</CardTitle>
-              <CardDescription className="pt-2 text-center text-sm leading-relaxed sm:text-base">Isi data diri Anda, kami akan segera menghubungi untuk konfirmasi</CardDescription>
-            </CardHeader>
-            <CardContent className="pt-6 sm:pt-8">
-              <form onSubmit={handleOrder} className="space-y-5 sm:space-y-6">
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">
-                    Nama Lengkap *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full rounded-xl border-2 border-gray-300 px-4 py-3 text-base focus:border-rose-500 focus:ring-2 focus:ring-rose-500 sm:px-5 sm:py-4 sm:text-lg"
-                    placeholder="Masukkan nama lengkap"
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-3 lg:gap-8">
+            {[
+              {
+                title: 'Paket Hemat',
+                subtitle: '1 Botol',
+                image: '/novia-1-box.png',
+                alt: 'Paket Hemat Femoire Novia 1 Botol',
+                features: ['60 Kapsul', 'Untuk 30 Hari', 'Gratis Ongkir'],
+                popular: false,
+                primary: false,
+              },
+              {
+                title: 'Paket Super',
+                subtitle: '2 Botol',
+                image: '/novia-2-box.png',
+                alt: 'Paket Super Femoire Novia 2 Botol',
+                features: ['120 Kapsul', 'Untuk 60 Hari', 'Gratis Ongkir', 'Bonus E-Book Kesehatan!'],
+                popular: true,
+                primary: true,
+              },
+              {
+                title: 'Paket Sultan',
+                subtitle: '3 Botol',
+                image: '/novia-3-box.png',
+                alt: 'Paket Sultan Femoire Novia 3 Botol',
+                features: ['180 Kapsul', 'Untuk 90 Hari', 'Gratis Ongkir Prioritas', 'Bonus E-Book + Konsultasi!'],
+                popular: false,
+                primary: false,
+              },
+            ].map((pkg) => (
+              <Card
+                key={pkg.title}
+                className={pkg.popular ? 'relative border-4 border-rose-500 shadow-2xl transition-all duration-300 md:hover:scale-105' : 'border-2 border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:border-rose-300 hover:shadow-xl'}
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
+                    <Badge className="bg-gradient-to-r from-rose-600 to-pink-600 px-5 py-2 text-sm font-bold text-white shadow-lg sm:px-6 sm:text-base">
+                      POPULER
+                    </Badge>
+                  </div>
+                )}
+                <CardHeader className={pkg.popular ? 'rounded-t-lg bg-gradient-to-b from-rose-50 to-white pb-4 text-center' : 'pb-4 text-center'}>
+                  <CardTitle className="text-xl font-bold text-gray-900 sm:text-2xl">{pkg.title}</CardTitle>
+                  <CardDescription className="text-base">{pkg.subtitle}</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <img
+                    src={pkg.image}
+                    alt={pkg.alt}
+                    className="mb-6 aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
                   />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">
-                    No. WhatsApp *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full rounded-xl border-2 border-gray-300 px-4 py-3 text-base focus:border-rose-500 focus:ring-2 focus:ring-rose-500 sm:px-5 sm:py-4 sm:text-lg"
-                    placeholder="Contoh: 081234567890"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">
-                    Alamat Lengkap *
-                  </label>
-                  <textarea
-                    required
-                    value={formData.address}
-                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    className="min-h-28 w-full rounded-xl border-2 border-gray-300 px-4 py-3 text-base focus:border-rose-500 focus:ring-2 focus:ring-rose-500 sm:min-h-32 sm:px-5 sm:py-4 sm:text-lg"
-                    placeholder="Masukkan alamat lengkap pengiriman"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">
-                    Jumlah Botol *
-                  </label>
-                  <select
-                    required
-                    value={formData.quantity}
-                    onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                    className="w-full rounded-xl border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-rose-500 focus:ring-2 focus:ring-rose-500 sm:px-5 sm:py-4 sm:text-lg"
+                  <ul className="mb-6 space-y-3 text-sm text-gray-600">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-center justify-center gap-2">
+                        {feature.toLowerCase().includes('bonus') ? (
+                          <Gift className="h-5 w-5 text-rose-600" />
+                        ) : feature.toLowerCase().includes('ongkir') ? (
+                          <Truck className="h-5 w-5 text-rose-600" />
+                        ) : (
+                          <CheckCircle2 className="h-5 w-5 text-green-600" />
+                        )}
+                        <span className={feature.toLowerCase().includes('bonus') ? 'font-medium text-rose-600' : 'font-medium'}>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    className={pkg.primary ? 'h-12 w-full rounded-full bg-gradient-to-r from-rose-600 to-pink-600 font-bold text-white shadow-lg shadow-rose-300/50 hover:from-rose-700 hover:to-pink-700 sm:h-14' : 'h-12 w-full rounded-full bg-gray-200 font-bold text-gray-900 shadow-md hover:bg-gray-300 sm:h-14'}
+                    onClick={() => {
+                      window.location.href = ADCUAN_TRACKING_URL
+                    }}
                   >
-                    <option value="1">1 Botol - Rp 349.000</option>
-                    <option value="2">2 Botol - Rp 599.000 (Hemat Rp 99.000)</option>
-                    <option value="3">3 Botol - Rp 849.000 (Hemat Rp 198.000)</option>
-                  </select>
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="h-12 w-full rounded-full bg-gradient-to-r from-green-600 to-emerald-600 text-base font-bold text-white shadow-xl shadow-green-300/50 transition-all hover:from-green-700 hover:to-emerald-700 hover:shadow-green-400/60 sm:h-14 sm:text-xl"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5 sm:mr-3 sm:h-6 sm:w-6" />
-                  Kirim Pesanan via WhatsApp
-                </Button>
-              </form>
-              <p className="text-sm text-gray-500 mt-6 text-center leading-relaxed">
-                📝 Data Anda aman dan hanya digunakan untuk keperluan pengiriman
-              </p>
-            </CardContent>
-          </Card>
+                    Pilih Paket
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -636,7 +501,7 @@ export default function Home() {
               },
               {
                 q: 'Bagaimana cara pembayarannya?',
-                a: 'Pembayaran dapat dilakukan melalui transfer bank (BCA, Mandiri, BRI) atau e-wallet (GoPay, OVO, Dana). Detail pembayaran akan dikirimkan via WhatsApp setelah Anda mengisi formulir pemesanan.'
+                a: 'Pembayaran dapat dilakukan melalui transfer bank (BCA, Mandiri, BRI) atau e-wallet (GoPay, OVO, Dana). Detail pembayaran akan dikirimkan via WhatsApp setelah Anda memilih paket.'
               },
               {
                 q: 'Berapa lama pengirimannya?',
