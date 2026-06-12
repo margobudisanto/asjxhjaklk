@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { CheckCircle2, Star, Heart, Flower2, Sparkles, Shield, Zap, ShoppingCart, Phone, MessageCircle, Award, Clock, Truck, Gift } from 'lucide-react'
 
+const ADCUAN_TRACKING_URL = 'https://plus.adcuan.com/ctwa/704-6'
+
 export default function Home() {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,8 +19,7 @@ export default function Home() {
 
   const handleOrder = (e: React.FormEvent) => {
     e.preventDefault()
-    const message = `Halo, saya ingin memesan Femoire Novia.%0A%0A📋 Detail Pesanan:%0A• Nama: ${formData.name}%0A• No. HP: ${formData.phone}%0A• Alamat: ${formData.address}%0A• Jumlah: ${formData.quantity} botol%0A%0AMohon info pembayaran dan pengiriman. Terima kasih!`
-    window.open(`https://wa.me/6281234567890?text=${message}`, '_blank')
+    window.location.href = ADCUAN_TRACKING_URL
   }
 
   return (
@@ -60,7 +61,9 @@ export default function Home() {
                   size="lg"
                   variant="outline"
                   className="h-12 w-full rounded-full border-2 border-rose-400 px-6 text-base font-bold text-rose-600 shadow-lg transition-all hover:border-rose-500 hover:bg-rose-50 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
-                  onClick={() => window.open('https://wa.me/6281234567890?text=Halo, saya ingin konsultasi tentang Femoire Novia', '_blank')}
+                  onClick={() => {
+                    window.location.href = ADCUAN_TRACKING_URL
+                  }}
                 >
                   <MessageCircle className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
                   Konsultasi Gratis
@@ -680,7 +683,9 @@ export default function Home() {
               size="lg"
               variant="outline"
               className="h-12 w-full rounded-full border-2 border-white px-6 text-base font-bold text-white shadow-xl transition-all hover:bg-white/20 sm:h-14 sm:w-auto sm:px-10 sm:text-lg"
-              onClick={() => window.open('https://wa.me/6281234567890?text=Halo, saya ingin konsultasi tentang Femoire Novia', '_blank')}
+              onClick={() => {
+                window.location.href = ADCUAN_TRACKING_URL
+              }}
             >
               <Phone className="mr-2 h-5 w-5 sm:mr-3 sm:h-6 sm:w-6" />
               Hubungi Kami
@@ -741,9 +746,7 @@ export default function Home() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/6281234567890?text=Halo, saya ingin memesan Femoire Novia"
-        target="_blank"
-        rel="noopener noreferrer"
+        href={ADCUAN_TRACKING_URL}
         className="fixed bottom-4 right-4 z-50 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 p-4 text-white shadow-2xl shadow-green-300/50 transition-all duration-300 hover:scale-110 hover:from-green-700 hover:to-emerald-700 sm:bottom-8 sm:right-8 sm:p-5"
       >
         <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8" />
